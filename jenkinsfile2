@@ -9,12 +9,13 @@ pipeline {
                 withSonarQubeEnv('sonarserver'){
                 sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=lebbie90_WEEK-16-CODE'
             }
+            }   
         }
         stage('all maven commands'){
             steps{
                 sh 'mvn clean compile test install package'
             }
         }
-     
     }
 }
+   
